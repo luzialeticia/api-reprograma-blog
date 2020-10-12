@@ -1,0 +1,13 @@
+{
+  "name": "api-reprograma-blog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:luzialeticia/api-reprograma-blog.git",
+  "author": "luzialeticia <leticialuzia@tutamail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4"
+  }
+}
