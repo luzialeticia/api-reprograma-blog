@@ -1,6 +1,21 @@
 const postsModel = require('../models/postsModels')
 const helper = require('../helpers/helper')
 
+const getAllPosts = (req, res) => {
+  res.status(200).json(postsModel)
+}
+
+const getPostByID = (req, res) => {
+  const { id } = req.params
+  const post = postsModel.find(post => post.id == id)
+
+  if(post) {
+    return res.status(200).json(post)
+  } else {
+    return res.status(404).json({ message: 'Post não encontrado.' })
+  }
+}
+
 const createPost = (req, res) => {
   const { titulo, conteudo, etiquetas } = req.body
   const newPost = {
@@ -29,6 +44,8 @@ const deletePost = (req, res) => {
 }
 
 module.exports = {
+  getAllPosts,
+  getPostByID,
   createPost,
   deletePost
 }
